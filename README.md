@@ -49,31 +49,31 @@ Large Buttons (44px)	Easy to tap on mobile, improves usability
 Stats + Testimonials + FAQ	Builds trust, removes doubts of new students
 Mobile-First Responsive Design	More than 70% students visit from mobile, page works on all screens
 6. TOOLS & TECHNOLOGIES USED
-- HTML5 - For page structure
-- CSS3 - For styling, Grid, Flexbox, Responsive Media Queries
-- JavaScript - For Track Selection and Apply Now popup
-- Google Fonts (Inter) - For typography
-- VS Code - For code editing
-- Browser - For testing
+   - HTML5 - For page structure
+   - CSS3 - For styling, Grid, Flexbox, Responsive Media Queries
+   - JavaScript - For Track Selection and Apply Now popup
+   - Google Fonts (Inter) - For typography
+   - VS Code - For code editing
+   - Browser - For testing
 
 7. KEY FEATURES IMPLEMENTED
-- Fully responsive design for Mobile, Tablet, Desktop
-- Sticky navigation with smooth scrolling
-- Interactive track selection - click to change track details
-- Apply Now popup using JavaScript
-- Hover effects on cards and buttons
-- FAQ accordion using `<details>` tag
-- Before / After comparison for evaluation
+   - Fully responsive design for Mobile, Tablet, Desktop
+   - Sticky navigation with smooth scrolling
+   - Interactive track selection - click to change track details
+   - Apply Now popup using JavaScript
+   - Hover effects on cards and buttons
+   - FAQ accordion using `<details>` tag
+   - Before / After comparison for evaluation
 
-8. HOW TO RUN THE PROJECT
-1. Save the code as `index.html`
-2. Double-click the file OR right-click > Open with Browser
-3. No internet / server needed, except Google Fonts
+8. HOW TO RUN THE PROJECT 
+   Save the code as `index.html`
+   Double-click the file OR right-click > Open with Browser
+   No internet / server needed, except Google Fonts
 
 9. LEARNING OUTCOME
 From this task I learned:
-- How to analyse UX problems in a real website
-- How to apply UI/UX principles - Hierarchy, Contrast, Spacing, CTA
-- How to build a responsive landing page from scratch
-- How to convert a design idea into working HTML/CSS/JS code
+   - How to analyse UX problems in a real website
+   - How to apply UI/UX principles - Hierarchy, Contrast, Spacing, CTA
+   - How to build a responsive landing page from scratch
+   - How to convert a design idea into working HTML/CSS/JS code
 
