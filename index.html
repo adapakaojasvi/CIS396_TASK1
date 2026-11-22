@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODTECH - Internship Landing Page | Redesign</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+  :root{--orange:#FF4D00;--navy:#0F172A;--light:#FFF7ED;--gray:#64748B;--white:#fff;--radius:16px}
+  body{background:var(--white);color:var(--navy);line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1100px;margin:auto;padding:0 20px}
+
+  /* NAV */
+  header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid #eee;z-index:100}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+  .logo{font-weight:900;font-size:24px;letter-spacing:-1px}
+  .logo span{color:var(--orange)}
+  .nav-links{display:flex;gap:28px;font-weight:600;font-size:15px}
+  .nav-links a:hover{color:var(--orange)}
+  .btn{background:var(--orange);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;border:0;cursor:pointer}
+  .btn:hover{background:#E04400;transform:translateY(-1px)}
+  .btn-outline{background:#fff;color:var(--navy);border:1.5px solid #E2E8F0}
+
+  /* HERO - BEFORE vs AFTER */
+  .hero{background:var(--light);padding:60px 0 50px;border-bottom:1px solid #FDE68A}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .badge{display:inline-block;background:#fff;border:1px solid #FED7AA;color:#C2410C;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700}
+  .hero h1{font-size:52px;line-height:1.05;letter-spacing:-2px;margin:18px 0 16px}
+  .hero h1 span{color:var(--orange)}
+  .hero p{color:var(--gray);font-size:18px;max-width:520px}
+  .hero-btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .stats{display:flex;gap:32px;margin-top:32px}
+  .stats b{font-size:22px;display:block}
+  .stats span{font-size:13px;color:var(--gray)}
+
+  /* HERO CARD - Visual Mockup */
+  .mockup{background:#fff;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.10);padding:20px;border:1px solid #eee}
+  .mockup-top{display:flex;gap:6px;margin-bottom:16px}
+  .dot{width:10px;height:10px;border-radius:50%;background:#FECACA}
+  .dot:nth-child(2){background:#FDE68A}.dot:nth-child(3){background:#BBF7D0}
+  .mockup h3{font-size:18px;margin-bottom:6px}
+  .mockup p{font-size:14px;color:var(--gray)}
+  .course-list{margin-top:16px;display:grid;gap:10px}
+  .course{display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:12px 14px;border-radius:12px;font-size:14px;font-weight:600}
+  .course i{font-style:normal;background:#FFF7ED;color:var(--orange);padding:4px 10px;border-radius:999px;font-size:12px}
+  .progress{height:8px;background:#E2E8F0;border-radius:999px;margin-top:14px;overflow:hidden}
+  .progress div{width:78%;height:100%;background:var(--orange)}
+
+  /* BEFORE / AFTER */
+  .section{padding:56px 0}
+  .section h2{font-size:34px;letter-spacing:-1px;text-align:center}
+  .section > .container > p{text-align:center;color:var(--gray);margin:10px 0 30px}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .ba-card{border:1.5px solid #E2E8F0;border-radius:var(--radius);padding:22px}
+  .ba-card.before{border-color:#FECACA;background:#FFFBFB}
+  .ba-card.after{border-color:#BBF7D0;background:#F0FDF4}
+  .ba-card h3{margin-bottom:12px}
+  .ba-card li{margin-left:18px;margin-bottom:8px;font-size:15px;color:#334155}
+
+  /* FEATURES */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{border:1px solid #E2E8F0;border-radius:var(--radius);padding:22px;background:#fff}
+  .card:hover{box-shadow:0 12px 30px rgba(0,0,0,.08);transform:translateY(-2px);transition:.2s}
+  .icon{width:48px;height:48px;border-radius:12px;background:#FFF7ED;display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+  .card h3{font-size:18px;margin-bottom:6px}
+  .card p{font-size:14px;color:var(--gray)}
+
+  /* TRACKS */
+  .tracks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .track{border:1px solid #E2E8F0;border-radius:14px;padding:18px;text-align:center;cursor:pointer}
+  .track.active{background:var(--navy);color:#fff}
+  .track b{display:block;margin:8px 0 4px}
+  .track span{font-size:13px;opacity:.8}
+
+  /* TESTIMONIAL + FAQ */
+  .testi{background:var(--navy);color:#fff;border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .testi p{font-size:16px}
+  .testi small{color:#CBD5E1}
+  .faq{max-width:700px;margin:20px auto 0;display:grid;gap:12px}
+  details{border:1px solid #E2E8F0;border-radius:12px;padding:16px;cursor:pointer;background:#fff}
+  summary{font-weight:700}
+  details p{color:var(--gray);font-size:14px;margin-top:8px}
+
+  /* CTA */
+  .cta{background:var(--orange);color:#fff;text-align:center;padding:44px 20px;border-radius:20px}
+  .cta h2{color:#fff;font-size:32px}
+  .cta .btn{background:#fff;color:var(--orange);margin-top:18px}
+
+  footer{padding:30px 0;text-align:center;color:var(--gray);font-size:14px;border-top:1px solid #eee;margin-top:50px}
+
+  /* MOBILE - Usability Fix */
+  @media(max-width:768px){
+    .hero-grid,.ba-grid,.features,.tracks,.testi{grid-template-columns:1fr}
+    .hero h1{font-size:36px}
+    .nav-links{display:none}
+    .tracks{grid-template-columns:1fr 1fr}
+    .stats{gap:18px;flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">COD<span>TECH</span></div>
+      <div class="nav-links">
+        <a href="#tracks">Internships</a>
+        <a href="#why">Why Us</a>
+        <a href="#before-after">Redesign</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <button class="btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Apply Now →</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">● Applications Open • 2026 Batch</span>
+      <h1>Learn by Building.<br>Get Hired <span>Faster.</span></h1>
+      <p>Real internship tasks, mentor support & certificate. Choose Web Dev, Python, AI/ML, Java & more — start from zero, build a portfolio.</p>
+      <div class="hero-btns">
+        <button class="btn" onclick="applyNow()">Start Free Internship →</button>
+        <button class="btn btn-outline" onclick="document.getElementById('tracks').scrollIntoView({behavior:'smooth'})">View Tracks</button>
+      </div>
+      <div class="stats">
+        <div><b>50,000+</b><span>Interns Trained</span></div>
+        <div><b>4.8 ★</b><span>Average Rating</span></div>
+        <div><b>100%</b><span>Online & Flexible</span></div>
+      </div>
+    </div>
+
+    <div class="mockup">
+      <div class="mockup-top"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <h3>Your Internship Dashboard</h3>
+      <p>Task-1 • Redesign a Landing Page — In Progress</p>
+      <div class="course-list">
+        <div class="course">Web Development <i>Task 1/4</i></div>
+        <div class="course">Python Programming <i>Popular</i></div>
+        <div class="course">AI / Machine Learning <i>New</i></div>
+      </div>
+      <div class="progress"><div></div></div>
+      <p style="margin-top:8px;font-size:13px">78% Completed • Certificate on completion</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section" id="before-after">
+  <div class="container">
+    <h2>Before → After Redesign</h2>
+    <p>Deliverable for Task-1: What I changed and why</p>
+    <div class="ba-grid">
+      <div class="ba-card before">
+        <h3>❌ BEFORE - Old Landing Page</h3>
+        <ul>
+          <li>Too much text, no clear headline</li>
+          <li>No clear CTA - user confused what to do</li>
+          <li>No visual hierarchy, all same size</li>
+          <li>Not mobile friendly, buttons too small</li>
+          <li>No trust signals / testimonials</li>
+        </ul>
+      </div>
+      <div class="ba-card after">
+        <h3>✅ AFTER - New Redesign</h3>
+        <ul>
+          <li>1 clear headline + 1 main CTA in Hero</li>
+          <li>Sticky nav + Apply button always visible</li>
+          <li>Cards, spacing, large fonts for hierarchy</li>
+          <li>Mobile-first, 44px touch targets</li>
+          <li>Stats + Testimonials + FAQ for trust</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section" id="why" style="background:#F8FAFC;padding-top:40px">
+  <div class="container">
+    <h2>Why Choose Codtech?</h2>
+    <p>Designed for beginners, built for placements</p>
+    <div class="features">
+      <div class="card"><div class="icon">💻</div><h3>Task-Based Learning</h3><p>No boring videos. You learn by doing 4 real tasks like this redesign.</p></div>
+      <div class="card"><div class="icon">🎓</div><h3>Certificate + LOR</h3><p>Completion certificate issued on your end date. Verifiable online.</p></div>
+      <div class="card"><div class="icon">👨‍🏫</div><h3>Mentor Support</h3><p>Doubt support, code review and feedback on every task submission.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section class="section" id="tracks">
+  <div class="container">
+    <h2>Pick Your Track</h2>
+    <p>Click a track to see details</p>
+    <div class="tracks" id="trackList">
+      <div class="track active" onclick="selectTrack(this,'Web Development')"><span>🌐</span><b>Web Dev</b><span>HTML • CSS • JS</span></div>
+      <div class="track" onclick="selectTrack(this,'Python')"><span>🐍</span><b>Python</b><span>Basics to Advanced</span></div>
+      <div class="track" onclick="selectTrack(this,'AI / ML')"><span>🤖</span><b>AI / ML</b><span>Deep Learning</span></div>
+      <div class="track" onclick="selectTrack(this,'Java')"><span>☕</span><b>Java</b><span>DSA + Projects</span></div>
+    </div>
+    <p id="trackInfo" style="text-align:center;margin-top:18px;font-weight:600">Selected: Web Development — 4 Tasks • 4 Weeks • Beginner Friendly</p>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section">
+  <div class="container">
+    <div class="testi">
+      <div><p>“I joined with zero knowledge. After 4 tasks I had a portfolio and got my first interview call. Best decision.”</p><br><small>— Priya, Web Dev Intern, 2025</small></div>
+      <div><p>“Tasks are real, not theory. The redesign task helped me learn UI/UX + HTML/CSS in one week.”</p><br><small>— Rahul, Python Intern, 2025</small></div>
+    </div>
+    <div class="faq" id="faq">
+      <details><summary>Is this internship free?</summary><p>Yes, Codtech offers free internship tracks with certificate on completion.</p></details>
+      <details><summary>How long is the internship?</summary><p>Typically 4 weeks, 4 tasks. You can complete at your own pace, fully online.</p></details>
+      <details><summary>Will I get a certificate?</summary><p>Yes, completion certificate will be issued on your internship end date.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" id="apply">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to Start Your Internship?</h2>
+      <p>Join 50,000+ students. No experience needed.</p>
+      <button class="btn" onclick="applyNow()">Apply Now - It's Free →</button>
+      <p style="font-size:13px;margin-top:12px;opacity:.9">No credit card • Certificate included • 2 min to apply</p>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 CODTECH • Redesign by Intern for Task-1 • Before/After + Design Decisions included in report</footer>
+
+<script>
+function selectTrack(el, name){
+  document.querySelectorAll('.track').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('trackInfo').innerText = `Selected: ${name} — 4 Tasks • 4 Weeks • Beginner Friendly`;
+}
+function applyNow(){
+  const name = prompt("Enter your name to apply:");
+  if(name) alert(`Thanks ${name}! 🎉 Your application for Codtech Internship is noted. Check your email for Task-1.`);
+}
+</script>
+</body>
+</html>
