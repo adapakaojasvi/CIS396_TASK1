@@ -28,15 +28,15 @@ After analysing the old page, the following problems were found:
 A new modern landing page was designed using HTML, CSS, and JavaScript in a single `index.html` file.
 
 New Structure:
-1. Sticky Navbar: CODTECH logo + Internships, Why Us, Redesign, FAQ + Always visible Apply Now button
-2. Hero Section: Badge "Applications Open • 2026 Batch", Headline "Learn by Building. Get Hired Faster.", 2 Buttons + Stats (50,000+ Interns, 4.8 Rating, 100% Online)
-3. Dashboard Mockup: Visual card showing Internship Dashboard with course list and 78% progress bar
-4. Before → After Section: Clear comparison of what was changed
-5. Why Choose Codtech: 3 Cards - Task-Based Learning, Certificate, Mentor Support
-6. Pick Your Track: 4 Interactive Tracks - Web Dev, Python, AI/ML, Java
-7. Testimonials + FAQ: 2 student reviews + 3 FAQs to build trust
-8. Final CTA: Orange section "Ready to Start Your Internship?" + Apply Now button
-9. Footer: Copyright and Task details
+  1. Sticky Navbar: CODTECH logo + Internships, Why Us, Redesign, FAQ + Always visible Apply Now button
+  2. Hero Section: Badge "Applications Open • 2026 Batch", Headline "Learn by Building. Get Hired Faster.", 2 Buttons + Stats (50,000+ Interns, 4.8 Rating, 100% Online)
+  3. Dashboard Mockup: Visual card showing Internship Dashboard with course list and 78% progress bar
+  4. Before → After Section: Clear comparison of what was changed
+  5. Why Choose Codtech: 3 Cards - Task-Based Learning, Certificate, Mentor Support
+  6. Pick Your Track: 4 Interactive Tracks - Web Dev, Python, AI/ML, Java
+  7. Testimonials + FAQ: 2 student reviews + 3 FAQs to build trust
+  8. Final CTA: Orange section "Ready to Start Your Internship?" + Apply Now button
+  9. Footer: Copyright and Task details
 
 5. DESIGN DECISIONS
 Decision	Reason
